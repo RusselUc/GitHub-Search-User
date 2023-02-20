@@ -4,6 +4,10 @@ import { ThemeContext } from "../context/ThemeContextProvider";
 import { TopAreaProps, UserProps } from "../types";
 import { joinedDate } from "../utils/formatter";
 
+import search from '../assets/icon-search.svg'
+import moon from '../assets/icon-moon.svg'
+import sun from '../assets/icon-sun.svg'
+
 const TopArea = ({ setUser }: TopAreaProps) => {
   const { changeTheme, lightMode } = useContext(ThemeContext);
   const [empty, setEmpty] = useState<boolean>(false);
@@ -79,12 +83,12 @@ const TopArea = ({ setUser }: TopAreaProps) => {
           {lightMode ? (
             <>
               DARK
-              <img src="/public/icon-moon.svg" alt="dark mode" />
+              <img src={moon} alt="dark mode" />
             </>
           ) : (
             <>
               LIGHT
-              <img src="/public/icon-sun.svg" alt="light mode" />
+              <img src={sun} alt="light mode" />
             </>
           )}
         </ChangeThemeBtn>
@@ -98,7 +102,7 @@ const TopArea = ({ setUser }: TopAreaProps) => {
       >
 
         <InputLabel>
-          <img src="/public/icon-search.svg" />
+          <img src={search} />
         </InputLabel>
 
         <Input ref={usernameRef} name="username" id="username" type="text" placeholder="Search username"/>
